@@ -1,6 +1,6 @@
 
 /*
-  Web Server
+ Arduino Environmental Scanner
 
  A modified web server that displays the results of an array of environmental sensors
  using an Arduino Uno and Wiznet Ethernet shield.
