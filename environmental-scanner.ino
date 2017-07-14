@@ -44,8 +44,8 @@ const int smokePin = A0; //Smoke sensor (smoke or flammable gas concentration le
 const int lightPin = A1; //Light sensor output pin to Arduino analog A1 pin
 const int gasPin = A2; // MQ-3 Alcohol Gas sensor (LPG, i-butane, methane, alcohol, Hydrogen, smoke, etc.) output to Arduino analog A2 pin
 const int hallSensor = A3; //Digital Hall sensor to detect magnetic fields
-int sensorValue = 0; //define numeric variables val
 const int waterSensor = A4; //Water sensor on Arduino analog A4 pin
+int sensorValue = 0; //define numeric variables val
 // Enter a MAC address and IP address for your controller below.
 // The IP address will be dependent on your local network:
 byte mac[] = {
