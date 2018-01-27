@@ -1,6 +1,24 @@
-# environmental-scanner
-Arduino sketch for a DIY environmental sensor array
+<h1> Environmental Scanner</h1>
+This is the code repository for an environmentally aware robot, that uses an Arduino Uno to sense the environment using a variety of analog and digital sensors. This data is then sent to a Raspberry Pi, using the serial (USB) connection.
 
-This comprehensive scanner uses an Arduino Uno, Ethernet Shield (connected to your local network), light sensor, temp and humidity sensor, water sensor, gas sensor, smoke sensor and magnetic field sensor and displays the sensor data to a website, which can be accessed from any phone, tablet or computer connected to the same network as the Arduino. A piezo (active) buzzer is used as a built-in alarm, which will sound under certain conditions.
+<h3>Arduino sketch for a DIY environmental sensor array</h3>
 
-This sketch was based on the WebServer sketch, created by David Mellis and modified by Tom Igoe and Arturo Guadalupi, so a special thanks goes out to them. You will also need the following libraries installed: SPI (serialperipheral interface) library, Ethernet library, Adafruit Sensor library, and DHT sensor library.
+This comprehensive scanner uses an Arduino Uno, light sensor, water sensor, gas sensor, smoke sensor and hall sensor and to detect light, water, gas, smoke and electromagnetic fields and then sends an alert over USB to a Raspberry Pi. Currently the Raspberry Pi will only display the current status of each sensor, but future releases will allow the Raspberry Pi to use this information to make intelligent decisions based on each sensor.
+
+Upload the arduino-raspberry.iso to your Arduino Uno. You will need the following sensors for this project:
+<ul>
+  <li>Arduino Uno</li>
+  <li>Hall Sensor (KY-003)</li>
+  <li>Gas and Alcohol Sensor (MQ3)</li>
+  <li>Light Sensor (KY-018)</li>
+  <li>Smoke Sensor (MQ2)</li>
+  <li>Water Level Sensor</li>
+</ul>
+
+Upload the raspberry-arduino.py script to your Raspberry Pi. In your Raspberry Pi interface, be sure to enable Serial and I2C in PiConfig. Connect your Arduino to your Raspberry Pi the execute:
+
+ls /dev/tty*
+
+Look for a line with /dev/ttyACMO or something similar (an ACM with any number 0, 1, 2, etc.
+
+Open the raspberry-arduino.py script and update the <strong>ser=serial.Serial("dev/ttyACM0",9600)</strong> to the ACM number you found. Next, run the raspberry-arduino.py script in Pyhton3. You will see a the status of each sensor in your Python terminal.
