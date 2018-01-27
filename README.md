@@ -7,7 +7,6 @@ This comprehensive scanner uses an Arduino Uno, light sensor, water sensor, gas 
 
 Upload the arduino-raspberry.iso to your Arduino Uno. You will need the following sensors for this project:
 <ul>
-  <li>Arduino Uno</li>
   <li>Hall Sensor (KY-003)</li>
   <li>Gas and Alcohol Sensor (MQ3)</li>
   <li>Light Sensor (KY-018)</li>
@@ -15,10 +14,15 @@ Upload the arduino-raspberry.iso to your Arduino Uno. You will need the followin
   <li>Water Level Sensor</li>
 </ul>
 
-Upload the raspberry-arduino.py script to your Raspberry Pi. In your Raspberry Pi interface, be sure to enable Serial and I2C in PiConfig. Connect your Arduino to your Raspberry Pi the execute:
+Upload the raspberry-arduino.py script to your Raspberry Pi. In your Raspberry Pi interface, be sure to enable Serial and I2C in PiConfig. Restart your Raspberry Pi and execute the following commands:
+
+sudo apt-get install python-serial
+sudo pip install pyserial
+
+Next, connect your Arduino to your Raspberry Pi then execute:
 
 ls /dev/tty*
 
-Look for a line with /dev/ttyACMO or something similar (an ACM with any number 0, 1, 2, etc.
+Look for a line with /dev/ttyACMO or something similar (an ACM with any number 0, 1, 2, etc.).
 
 Open the raspberry-arduino.py script and update the <strong>ser=serial.Serial("dev/ttyACM0",9600)</strong> to the ACM number you found. Next, run the raspberry-arduino.py script in Pyhton3. You will see a the status of each sensor in your Python terminal.
