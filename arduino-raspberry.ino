@@ -1,3 +1,7 @@
+/* Written by Johnathan Nicolosi
+    This code will send analog sensor data to a Raspberry Pi via the serial interface
+*/
+
 const int smokePin = A0; //Smoke sensor (smoke or flammable gas concentration level) output pin to Arduino analog A0 pin
 const int lightPin = A1; //Light sensor output pin to Arduino analog A2 pin
 const int gasPin = A2; // MQ-3 Alcohol Gas sensor (LPG, i-butane, methane, alcohol, Hydrogen, smoke, etc.) output to Arduino analog A2 pin
